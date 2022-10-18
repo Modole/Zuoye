@@ -1,0 +1,61 @@
+CoreSwitch-Campus:
+en
+cisco
+conf t
+router ospf 1
+router-id 1.1.1.1
+end
+clear ip ospf process 
+y
+
+conf t
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 192.168.3.0 0.0.0.255 area 0
+network 192.168.80.0 0.0.0.255 area 0
+network 192.168.82.0 0.0.0.255 area 0
+network 192.168.83.0 0.0.0.255 area 0
+network 192.168.84.0 0.0.0.255 area 0
+network 10.6.5.0 0.0.0.255 area 0
+network 10.6.6.0 0.0.0.255 area 0
+network 10.6.9.0 0.0.0.255 area 0
+
+
+
+Campus-Router:
+en
+conf t
+router ospf 1
+router-id 4.4.4.4
+end
+clear ip ospf process 
+y
+conf t
+router ospf 1
+network 192.168.2.0 0.0.0.255 area 0
+network 192.168.3.0 0.0.0.255 area 0
+network 218.75.41.0 0.0.0.255 area 0
+
+network 177.241.0.0 0.0.0.255 area 0
+network 218.75.41.0 0.0.0.255 area 0
+Switch-B10:
+en
+cisco
+conf t
+router ospf 1
+router-id 3.3.3.3
+end
+clear ip ospf process 
+y
+conf t
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 192.168.2.0 0.0.0.255 area 0
+network 192.168.80.0 0.0.0.255 area 0
+network 192.168.82.0 0.0.0.255 area 0
+network 192.168.83.0 0.0.0.255 area 0
+network 192.168.84.0 0.0.0.255 area 0
+network 10.6.5.0 0.0.0.255 area 0
+network 10.6.6.0 0.0.0.255 area 0
+network 10.6.9.0 0.0.0.255 area 0
+network 177.241.10.0 0.0.0.255 area 0

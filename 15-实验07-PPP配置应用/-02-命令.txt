@@ -1,0 +1,97 @@
+R1：
+int s0/0/1 
+ip address 172.16.0.9 255.255.255.252
+no shu
+
+int s0/0/0
+ip address 172.16.0.1 255.255.255.252
+no shu
+
+int g0/1 
+ip address 10.0.0.1 255.255.255.128
+no shu
+
+
+R2：
+int s0/0/1 
+ip address 172.16.0.5 255.255.255.252
+no shu
+
+int s0/0/0
+ip address 172.16.0.2 255.255.255.252
+no shu
+
+int g0/1
+ip address 209.165.200.161 255.255.255.224
+no shu
+
+
+
+R3：
+int s0/0/1 
+ip address 172.16.0.6 255.255.255.252
+no shu
+
+int s0/0/0
+ip address 172.16.0.10 255.255.255.252
+no shu
+
+int g0/1 
+ip address 10.0.0.129 255.255.255.128
+no shu
+
+
+ISP:
+int g0/1
+ip address 209.165.200.162 255.255.255.224
+no shu
+
+
+
+
+R1:
+Username R1 password cisco
+Int se0/0/0
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R2 password cisco
+
+
+
+Int se0/0/1
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R3 password cisco
+
+
+
+R2:
+Username R2 password cisco
+Int se0/0/0
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R1 password cisco
+
+
+
+Int se0/0/1
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R3 password cisco
+
+
+
+
+R3:
+Username R3 password cisco
+Int se0/0/0
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R1 password cisco
+
+
+
+Int se0/0/1
+encapsulation ppp
+ppp authentication pap   
+ppp pap sent-username R2 password cisco
